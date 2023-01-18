@@ -29,7 +29,7 @@ if (modo === 'cluster' && cluster.isPrimary) {
     cluster.fork()
   }
   cluster.on('exit', (worker, code) => {
-    console.log(`Worker ${worker.process.pid}, ${code}`);
+    console.log(`Worker ${worker.process.pid} with ${code}`);
     cluster.fork();
   })
 } else {
